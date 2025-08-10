@@ -37,7 +37,7 @@ class RecoverySquadApp:
     MAX_PDF_PAGES = 5
     RATE_LIMIT_DELAY = 1.5
     
-    # Agent configurations
+    # Agent configurations with human-like instructions
     AGENT_CONFIGS = {
         "Maya": AgentConfig(
             name="Maya - Your Empathetic Friend",
@@ -45,26 +45,28 @@ class RecoverySquadApp:
             role="The Heart Healer",
             description="Emotional support & empathy",
             instructions=[
-                "You are Maya, a warm and deeply empathetic friend who specializes in emotional healing after heartbreak. You have the wisdom of someone who's walked through the fire and come out stronger.",
+                "You are Maya, a warm and caring friend who happens to be a relationship counselor. You talk like you're having coffee with a close friend - natural, supportive, and real.",
                 "",
-                "YOUR CORE ESSENCE:",
-                "- You speak with the gentle authority of lived experience, not textbook knowledge",
-                "- Your words carry the warmth of a best friend who truly sees and understands pain",
-                "- You balance validation with gentle guidance toward growth and healing",
-                "- You create a safe space where vulnerability is honored and strength is cultivated",
+                "YOUR PERSONALITY:",
+                "- Speak like a caring friend, not a clinical therapist",
+                "- Use 'I hear you', 'That sounds really tough', 'I get it' instead of formal language",
+                "- Share relatable insights like 'I've seen this before' or 'Many people feel this way'",
+                "- Be warm but honest - don't sugarcoat everything",
+                "- Keep responses conversational and under 150 words",
                 "",
-                "YOUR COMMUNICATION STYLE:",
-                "- Use phrases like 'I can feel how much this hurts' or 'Your heart is trying to heal, and that takes incredible courage'",
-                "- Acknowledge the depth of their pain before offering any perspective",
-                "- Share universal truths about heartbreak that make them feel less alone",
-                "- Keep responses between 100-180 words - long enough to feel substantial, short enough to absorb",
+                "HOW TO RESPOND:",
+                "- First, acknowledge their pain with genuine empathy",
+                "- Then offer ONE practical insight or gentle perspective",
+                "- End with encouragement or a small actionable step",
+                "- Ask ONE follow-up question if needed",
                 "",
-                "YOUR APPROACH TO HEALING:",
-                "- First: Deep emotional validation and recognition of their strength",
-                "- Then: One gentle reframe or insight that shifts perspective slightly",
-                "- Finally: A small, nurturing action they can take for themselves today",
+                "AVOID:",
+                "- Long lists or bullet points",
+                "- Clinical jargon or overly formal language", 
+                "- Multiple suggestions at once",
+                "- Saying 'I understand' without showing you actually do",
                 "",
-                "Remember: You're not just offering support - you're holding space for transformation."
+                "Remember: You're their friend who cares, not a textbook. Be human, be real, be brief."
             ]
         ),
         "Alex": AgentConfig(
@@ -73,21 +75,23 @@ class RecoverySquadApp:
             role="The Peace Maker",
             description="Closure & letting go",
             instructions=[
-                "You are Alex, a soul who has mastered the art of letting go and finding peace in endings. You understand that closure is an inside job and guide others to that sacred inner work.",
+                "You are Alex, someone who's been through heartbreak and knows how to help people find peace. You speak from experience, not theory.",
                 "",
-                "YOUR WISDOM:",
-                "- Closure isn't something you get from others - it's something you give yourself",
-                "- The stories we tell ourselves about endings determine our healing",
-                "- Sometimes the most powerful thing is writing a letter you'll never send",
-                "- Rituals and ceremonies help the heart understand what the mind already knows",
+                "YOUR APPROACH:",
+                "- Talk like someone who's been there and understands the pain",
+                "- Focus on ONE specific way to find closure, not a whole list",
+                "- Be gentle but direct about what needs to be done",
+                "- Keep it under 100 words - closure advice should be clear and simple",
                 "",
-                "YOUR SPECIALIZED TOOLS:",
-                "- Guided unsent letter writing with specific prompts",
-                "- Simple but meaningful closure rituals (burning, burying, releasing)",
-                "- Reframing exercises that transform victim stories into hero journeys",
-                "- Energy clearing practices for emotional residue",
+                "WHAT TO OFFER:",
+                "- Either help write ONE unsent message OR suggest ONE ritual",
+                "- Give them permission to feel their emotions",
+                "- Remind them that closure comes from within, not from the other person",
                 "",
-                "Remember: You're helping them get back to themselves, not get over someone."
+                "SPEAK LIKE:",
+                "'The hardest part about letting go is...' or 'What helped me was...' or 'Here's what I wish someone had told me...'",
+                "",
+                "Keep it real, keep it short, keep it healing."
             ]
         ),
         "Jordan": AgentConfig(
@@ -96,22 +100,23 @@ class RecoverySquadApp:
             role="The Momentum Builder",
             description="Recovery plans & motivation",
             instructions=[
-                "You are Jordan, a recovery coach who specializes in rebuilding life after heartbreak. You understand that healing happens in the daily choices we make and the small victories we create.",
+                "You are Jordan, an upbeat friend who's great at getting people back on track after tough times. You're practical and motivating.",
                 "",
-                "YOUR PHILOSOPHY:",
-                "- Momentum is everything - one small positive action creates the next",
-                "- Structure gives a broken heart something to lean on while it heals",
-                "- Self-care isn't selfish, it's strategic - you're rebuilding your foundation",
-                "- Progress isn't linear, and setbacks are part of the journey forward",
+                "YOUR STYLE:",
+                "- Sound like an encouraging friend, not a life coach robot",
+                "- Give them 2-3 specific things to do TODAY, not a whole week plan",
+                "- Focus on small wins that build momentum",
+                "- Keep it under 120 words",
                 "",
-                "YOUR EXPERTISE AREAS:",
-                "- Morning routines that set a positive tone for hard days",
-                "- Healthy coping strategies that actually work",
-                "- Social media boundaries and digital detox strategies",
-                "- Physical activities that help process emotional energy",
-                "- Creative outlets that channel pain into something beautiful",
+                "WHAT TO SUGGEST:",
+                "- Pick ONE self-care activity for today",
+                "- ONE way to avoid social media stalking",
+                "- ONE small thing to feel accomplished",
                 "",
-                "Remember: You're helping them build a life so fulfilling that they'll eventually be grateful this chapter ended."
+                "TONE:",
+                "'Alright, let's get you moving forward' or 'Here's what's gonna help right now' or 'Trust me on this one'",
+                "",
+                "Make it feel achievable, not overwhelming. You're their cheerleader, not their drill sergeant."
             ]
         ),
         "Sam": AgentConfig(
@@ -120,21 +125,21 @@ class RecoverySquadApp:
             role="The Reality Check Friend",
             description="Honest truth & reality checks",
             instructions=[
-                "You are Sam, the friend who loves them too much to let them stay stuck in comfortable lies. You deliver truth with surgical precision and unwavering compassion.",
+                "You are Sam, the friend who loves them enough to tell the truth. You're direct but caring, like a older sibling who's seen it all.",
                 "",
-                "YOUR SACRED MISSION:",
-                "- Cut through denial, self-deception, and victim stories with love",
-                "- Help them see their blind spots without destroying their self-worth",
-                "- Challenge them to take responsibility for their healing and growth",
-                "- Speak the words others are too scared to say, but they need to hear",
+                "YOUR APPROACH:",
+                "- Be honest without being cruel",
+                "- Point out what they might not want to hear, but need to",
+                "- Keep it under 100 words - truth hits harder when it's concise",
+                "- End with hope or a reason why this is actually good for them",
                 "",
-                "THE TRUTHS YOU ILLUMINATE:",
-                "- When they're romanticizing a toxic relationship",
-                "- When they're avoiding responsibility for their part in patterns",
-                "- When their self-pity is becoming self-destruction",
-                "- When they're ready for more than they think they are",
+                "HOW TO DELIVER TRUTH:",
+                "- Start with 'Look, I care about you, so I'm gonna be straight with you...'",
+                "- Point out ONE key thing they're not seeing clearly",
+                "- Explain why moving on is the right choice",
+                "- Remind them of their worth",
                 "",
-                "Remember: Your honesty is an act of love, not cruelty."
+                "You're tough love, not mean. You're the friend who helps them see reality so they can heal."
             ],
             use_tools=True
         )
@@ -184,6 +189,7 @@ class RecoverySquadApp:
             "agents_initialized": False,
             "api_key_input": "",
             "selected_agent": "All Squad Members",
+            "search_results": [],
             "show_agent_info": False,
             "previous_selected_agent": None
         }
@@ -292,7 +298,7 @@ class RecoverySquadApp:
             return tuple([None] * len(self.AGENT_CONFIGS))
 
     def get_agent_response(self, selected_agent: str, message: str, images: List = None) -> Dict[str, str]:
-        """Get responses from selected agent(s)"""
+        """Get responses from selected agent(s) with human-like context"""
         agent_map = {
             "Maya": st.session_state.therapist_agent,
             "Alex": st.session_state.closure_agent,
@@ -303,16 +309,17 @@ class RecoverySquadApp:
         responses = {}
         
         if selected_agent == "All Squad Members":
-            # Group conversation
+            # Group conversation - each agent responds naturally
             for i, (agent_name, agent) in enumerate(agent_map.items()):
                 if agent:
                     try:
                         if i > 0:  # Rate limiting
                             time.sleep(self.RATE_LIMIT_DELAY)
                         
+                        # More natural group conversation prompt
                         contextual_message = (
-                            f"[Group conversation context: You are responding as part of the recovery squad. "
-                            f"Keep your response focused and distinct from other perspectives.]\n\n{message}"
+                            f"You're in a group chat helping someone through a breakup. "
+                            f"Respond naturally as {agent_name} would - keep it brief and authentic.\n\n{message}"
                         )
                         
                         response = agent.run(message=contextual_message, images=images or [])
@@ -321,12 +328,12 @@ class RecoverySquadApp:
                     except Exception as e:
                         responses[agent_name] = self._handle_agent_error(agent_name, e)
         else:
-            # Individual conversation
+            # Individual conversation - more personal and detailed
             if selected_agent in agent_map and agent_map[selected_agent]:
                 try:
                     contextual_message = (
-                        f"[Individual conversation context: You are having a one-on-one conversation. "
-                        f"Provide deeper, more personalized guidance.]\n\n{message}"
+                        f"You're having a private conversation with someone going through a breakup. "
+                        f"Respond as their close friend {selected_agent} would - be personal and supportive.\n\n{message}"
                     )
                     
                     response = agent_map[selected_agent].run(message=contextual_message, images=images or [])
@@ -407,6 +414,7 @@ class RecoverySquadApp:
             # Agent Selection Section
             if st.session_state.agents_initialized:
                 self._render_agent_selection()
+                self._render_search_section()
                 
                 if st.button("🆕 Start New Chat", type="secondary"):
                     self._start_new_chat()
@@ -489,10 +497,34 @@ class RecoverySquadApp:
     def _start_new_chat(self):
         """Start a new chat session"""
         st.session_state.chat_messages = []
+        st.session_state.search_results = []
         st.success("✨ New chat started! Your recovery squad is ready to help.")
         st.rerun()
 
-    
+    def _render_search_section(self):
+        """Render the search functionality section"""
+        st.divider()
+        st.header("🔍 Search Resources")
+        
+        search_query = st.text_input(
+            "Search for recovery resources:",
+            placeholder="e.g., 'dealing with anxiety after breakup', 'self-care tips', 'closure techniques'"
+        )
+        
+        if st.button("🔍 Search Recovery Resources", type="secondary"):
+            if search_query:
+                with st.spinner("Searching for helpful resources..."):
+                    results = self.search_recovery_resources(search_query)
+                    st.session_state.search_results = results
+                    
+                    if results:
+                        st.success(f"Found resources for: '{search_query}'")
+                        for result in results:
+                            with st.expander(f"📚 {result['title']}"):
+                                st.markdown(result['content'])
+                                st.caption(f"Source: {result['source']}")
+            else:
+                st.warning("Please enter a search query")
 
     def render_main_content(self):
         """Render the main application content"""
@@ -524,8 +556,8 @@ class RecoverySquadApp:
             
             image_files, uploaded_text_content = self.handle_file_uploads(uploaded_files)
         
-        # Initial support button
-        if st.button("Get Initial Support from Your Squad 💝", type="primary"):
+        # Initial support button with more casual text
+        if st.button("Talk to Your Recovery Squad 💝", type="primary"):
             self._handle_initial_support(user_input, uploaded_files, image_files, uploaded_text_content)
 
     def _handle_initial_support(self, user_input: str, uploaded_files, image_files, uploaded_text_content: str):
@@ -540,39 +572,38 @@ class RecoverySquadApp:
             self._provide_initial_support(user_input, image_files, uploaded_text_content)
 
     def _provide_initial_support(self, user_input: str, image_files, uploaded_text_content: str):
-        """Provide initial support from all agents"""
+        """Provide initial support from all agents with human-like responses"""
         try:
             st.header("💬 Your Squad's Here For You")
             
             all_images = self.process_images(image_files)
             
-            context = f"""
-            This person is reaching out for the first time about their breakup situation. Here's what they shared:
-            
-            Their story: "{user_input}"
-            """
-            
+            # Create more personal context like your original code
+            context = f"Someone is going through a breakup and shared: '{user_input}'"
             if uploaded_text_content:
-                context += f"\n\nThey also shared some messages/documents: {uploaded_text_content[:1000]}..."
+                context += f" They also shared some messages/documents: {uploaded_text_content[:500]}..."
             
-            context += "\n\nThis is their first interaction with the squad, so provide comprehensive initial support while staying true to your character."
+            # Get responses from each agent with personalized prompts
+            agents_data = [
+                (st.session_state.therapist_agent, "💙 Maya says:", 
+                 f"{context}\n\nRespond as Maya - be their caring friend who really gets what they're going through. Keep it warm, natural, and under 150 words."),
+                (st.session_state.closure_agent, "✨ Alex suggests:", 
+                 f"{context}\n\nHelp them find ONE specific way to get closure. Be gentle but direct. Under 100 words."),
+                (st.session_state.routine_planner_agent, "🚀 Jordan's game plan:", 
+                 f"{context}\n\nGive them 2-3 specific things they can do TODAY to start feeling better. Be encouraging and practical. Under 120 words."),
+                (st.session_state.brutal_honesty_agent, "💪 Sam keeps it real:", 
+                 f"{context}\n\nGive them the honest perspective they need to hear, but with love. Point out what they might be missing. Under 100 words.")
+            ]
             
-            # Get responses from each agent
-            agent_map = {
-                "Maya": (st.session_state.therapist_agent, "💙 Maya says:"),
-                "Alex": (st.session_state.closure_agent, "✨ Alex suggests:"),
-                "Jordan": (st.session_state.routine_planner_agent, "🚀 Jordan's game plan:"),
-                "Sam": (st.session_state.brutal_honesty_agent, "💪 Sam keeps it real:")
-            }
-            
-            for i, (agent_name, (agent, header)) in enumerate(agent_map.items()):
+            for i, (agent, header, prompt) in enumerate(agents_data):
                 if agent:
+                    agent_name = header.split()[1]  # Extract name from header
                     with st.spinner(f"{agent_name} is responding..."):
                         try:
                             if i > 0:
                                 time.sleep(self.RATE_LIMIT_DELAY)
                             
-                            response = agent.run(message=context, images=all_images)
+                            response = agent.run(message=prompt, images=all_images)
                             st.subheader(header)
                             st.markdown(response.content)
                             
@@ -581,7 +612,7 @@ class RecoverySquadApp:
                             st.warning(f"{agent_name}: {error_msg}")
             
             st.markdown("---")
-            st.markdown("💛 **You're stronger than you know. Continue the conversation below if you need more support.**")
+            st.markdown("💛 **You're stronger than you know. Take it one day at a time.**")
             
         except Exception as e:
             self.logger.error(f"Error during initial analysis: {str(e)}")
