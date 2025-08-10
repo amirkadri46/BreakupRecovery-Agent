@@ -120,6 +120,7 @@ streamlit run breakup_agent.py
 ---
 
 ## 🤝 Contributing
+If you found this helpful, please share by tagging @Amirkadri_7
 Issues and suggestions are welcome. Please include:
 - What you expected vs. what happened
 - Steps to reproduce
@@ -129,5 +130,6 @@ Issues and suggestions are welcome. Please include:
 
 ## 🙏 A gentle note
 This app is for emotional support and guidance. It is not a substitute for professional mental health care. If you’re in crisis, please reach out to local emergency services or a trusted professional.
+
 
 
